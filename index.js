@@ -3,10 +3,21 @@ const prompt = require('prompt-sync')();
 const tickets = require('./tickets.json');
 const users = require('./users.json');
 const organizations = require('./organizations.json');
+
 const searchTables = { 1: 'users', 2: 'tickets', 3: 'organizations' }
-prompt("Welcome to Zendesk Search\nType 'quit' to exit any time, Press Enter to Continue");
+console.log("Welcome to Zendesk Search");
+const isQuit = prompt("Type 'quit' to exit any time, Press Enter to Continue");
+
+/**
+ * if input in quit the terminate the process
+ */
+if (isQuit.toLocaleLowerCase() == 'quit') {
+    process.exit();
+}
+
 console.log("Select Search Option:\n * Press 1 to search Zendesk\n * Press 2 to view a list on search able fields\n * Type 'quit' to exit");
 const searchOption = prompt("");
+
 if (Number(searchOption) === 1) {
     console.log(searchOption);
     const searchTable = prompt("Select 1) Users or 2) Tickets or 3) Organizations: ");

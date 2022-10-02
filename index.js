@@ -37,7 +37,7 @@ if (Number(searchOption) === 1) {
 }
 
 function search(searchTable, searchTerm, searchValue) {
-    console.log('*******', searchTable, searchTerm, searchValue);
+    console.log('Search From:', searchTable, "Search Key: ", searchTerm, "Search Value: ", searchValue);
     let result;
     switch (searchTable) {
         case '1':
